@@ -1,52 +1,7 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
 
-.dark{
-    background-color: black;
-    color: white;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-    row-gap: 15px;
-    border: 2px solid ;
-    margin: 10% 41%;
-    padding: 20px;
-    border-radius: 15px;
-}
-
-form input {
-    width: 100%;
-    padding: 5px;
-    border-radius: 10px;
-    outline: none;
-
-}
-
-form button {
-    width: 100%;
-    padding: 5px;
-    border-radius: 10px;
-    outline: none;
-}
-
-#image{
-   font-size: 38px;
-   margin:10px 20px;
-}
-
-
-
-/* .box {
+.box {
     width: 100px;
     background-color: red;
     height: 100px;
     margin: 10% 30%;
-} */
+}
