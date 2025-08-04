@@ -40,3 +40,13 @@ box.append(title)       //ketma ket qoshadi
 box.append(undeline)
 box.prepend(undeline)      //brinchiga qoshadi
 console.log(box);
+
+const button = document.createElement('button')
+button.textContent = 'click me'
+button.setAttribute('class' , 'btn')
+
+document.body.append(button)
+
+button.onclick = () => {
+    alert('welcome')
+}
