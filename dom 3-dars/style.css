@@ -1,24 +1,29 @@
-/* * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
 
+.dark{
+    background-color: black;
+    color: white;
+}
+
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20%;
+    margin-top: 10px;
     row-gap: 15px;
-    border: 2px solid black;
-    margin: 20% 41%;
-    padding: 40px;
+    border: 2px solid ;
+    margin: 10% 41%;
+    padding: 20px;
     border-radius: 15px;
 }
 
 form input {
-    width: 250px;
+    width: 100%;
     padding: 5px;
     border-radius: 10px;
     outline: none;
@@ -26,15 +31,22 @@ form input {
 }
 
 form button {
-    width: 250px;
+    width: 100%;
     padding: 5px;
     border-radius: 10px;
     outline: none;
-} */
+}
 
-.box {
+#image{
+   font-size: 38px;
+   margin:10px 20px;
+}
+
+
+
+/* .box {
     width: 100px;
     background-color: red;
     height: 100px;
     margin: 10% 30%;
-}
+} */
