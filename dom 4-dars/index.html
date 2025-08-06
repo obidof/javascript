@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body">
+
+
+    <textarea class="textare" id="textare" spellcheck="false"></textarea>
+    <h1 class="text-h1">count: <span id="count">0</span>ta so'z</h1>
+
+
+    <p id="text" class="text">parol kamida 7 ta bolishi kerak</p>
+
+    <div id="modalcontainer" class="modalcontainer">
+        <div class="modal">
+            <div style="display: flex;">
+                <h1>Welcome</h1>
+                <p id="x"><ion-icon name="close-circle"></ion-icon></p>
+            </div>
+
+            
+            <form id="form">
+                <input id="ism" type="text" placeholder="ism" required>
+                <input id="email" type="email" placeholder="email" required>
+                <input id="parol" type="password" placeholder="password" required>
+                <button disabled id="btn">yuborish</button>
+                
+            </form>
+        </div>
+    </div>
+    <button id="openmodal">open modal</button>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./app.js"></script>
+    </body>
+
+</html>
