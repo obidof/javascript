@@ -5,9 +5,9 @@ const btn = document.getElementById('btn')
 const form = document.getElementById('form')
 
 function DataForm() {
-    console.log(ism.value);
-    console.log(email.value);
-    console.log(parol.value);
+    // console.log(ism.value);
+    // console.log(email.value);
+    // console.log(parol.value);
     let newArr = {
         ism: ism.value,
         email: email.value,
