@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.user{
+    border: 2px solid blue;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+body{
+    padding: 20px;
+}
