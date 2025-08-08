@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.container{
+    margin: 100px auto;
+    box-shadow: 0 0 10px;
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+}
+.data {
+    padding: 30px;
+    margin-left: 15%;
+    margin-top: 30%;
+    font-size: 38px;
+}
+
+.result {
+    margin-left: 23%;
+    font-size: 38px;
+    margin-top: 15px;
+}
