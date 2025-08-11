@@ -1,25 +1,25 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     font-family: sans-serif;
 }
-.container{
-    margin: 100px auto;
-    box-shadow: 0 0 10px;
-    width: 500px;
-    height: 500px;
+
+.card {
+    padding: 50px;
     border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
-.data {
+
+input {
     padding: 30px;
-    margin-left: 15%;
-    margin-top: 30%;
-    font-size: 38px;
+    font-size: 16px;
 }
 
 .result {
-    margin-left: 23%;
-    font-size: 38px;
-    margin-top: 15px;
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 30px;
 }
