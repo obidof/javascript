@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.darkmod{
+    background-color: black;
+    color: white;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    padding: 15px;
+
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+p {
+    text-decoration: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.menu p:hover {
+    color: rgb(255, 140, 0);
+
+}
+
+.buy {
+    font-size: 25px;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.icon-box .buy:hover {
+    background-color: rgba(104, 104, 104, 0.208);
+}
+
+.icon-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 25px;
+}
+
+.moon {
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.icon-box .moon:hover {
+    background-color: rgba(104, 104, 104, 0.208);
+}
+
+/* ====================================================================================================================== */
+
