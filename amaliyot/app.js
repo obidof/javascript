@@ -20,29 +20,61 @@ dark.onclick = () => {
 
 // ===========================================================================================================
 
-AOS.init();
+let img = document.getElementById('img')
+let tab = document.getElementById('tab')
 
-let plus = document.getElementById('plus')
-let minus = document.getElementById('minus')
+let btn1 = document.getElementById('btn1')
+let btn2 = document.getElementById('btn2')
+let btn3 = document.getElementById('btn3')
+let btn4 = document.getElementById('btn4')
+
 const carusel = document.querySelector('.carusel')
-const arr = ['./image/image copy 8.png', './image/image copy 9.png']
+
+
 
 let result = 0
-const images = document.createElement('img')
-
-images.setAttribute('src', arr[0])
-
-carusel.append(images)
-
-setInterval(() => {
-    if (result >= arr.length - 1) {
-        result = 0
-    }
-    else {
-        result++
-    }
-
-    images.setAttribute('src', arr[result])
 
 
-}, 3000)
+// setInterval(() => {
+//     if (result >= arr.length - 1) {
+//         result = 0
+//     }
+//     else {
+//         result++
+//     }
+
+//     img.src = (arr[result])
+
+
+// }, 1000)
+
+btn1.onclick = () => {
+ window.location.href = '#img1'
+}
+
+// btn2.onclick = () => {
+//  window.location.href = '#img2'
+// }
+
+// btn3.onclick = () => {
+//  window.location.href = '#img3'
+// }
+
+// btn4.onclick = () => {
+//  window.location.href = '#img4'
+// }
+
+// ==========================modal================================
+
+let buy = document.querySelector('.buy')
+let modal = document.querySelector('.modal')
+let close = document.getElementById('close')
+
+buy.onclick = () => {
+    modal.classList.add('openModal')
+}
+
+close.onclick = () => {
+    modal.classList.remove('openModal')
+}
+

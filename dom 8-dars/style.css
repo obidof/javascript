@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #00191f;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    color: white;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.result{
+   background-color: #585656;
+   padding: 20px 30px;
+   color: white;
+   font-size: 20px;
+   border-radius: 8px;
+   border: none; 
+   text-align: right;
+}
+
+.grid-container{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 16px;  
+
+}
+
+.grid-container .btn {
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #3f3d3d;
+    color: white;
+    cursor: pointer;
+
+}
+
+.grid-container .teng{
+    grid-column: span 2;
+    background-color: green;
+}
+
+.grid-container .red{
+    background-color: rgb(205, 11, 11);
+}
+
+.grid-container .amal{
+    background-color: rgb(255, 136, 0);
+}
+
+.grid-container .btn:active{
+    transform: scale(0,95);
+}
+
+
