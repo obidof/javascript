@@ -5,19 +5,26 @@ const moon = document.querySelector('moon')
 const icons = document.querySelector('.icon-box')
 const dark = document.querySelector('.dark')
 
-let toggle = false
+let toggle = JSON.parse(localStorage.getItem('dark') || false)
+console.log(toggle)
 dark.onclick = () => {
     toggle = !toggle
+    localStorage.setItem('dark', toggle)
+    darkMode(toggle)
+}
 
-    document.body.classList.toggle('darkmod')
+function darkMode(toggle) {
     if (toggle) {
+        document.body.classList.add('darkmod')
         dark.innerHTML = '<ion-icon class="moon" name="sunny-outline"></ion-icon>'
     }
     else {
         dark.innerHTML = '<ion-icon class="moon" name="moon-outline"></ion-icon>'
+        document.body.classList.remove('darkmod')
+        
     }
 }
-
+darkMode(toggle)
 // ===========================================================================================================
 
 let img = document.getElementById('img')
@@ -49,20 +56,20 @@ let result = 0
 // }, 1000)
 
 btn1.onclick = () => {
- window.location.href = '#img1'
+    window.location.href = '#img1'
 }
 
-// btn2.onclick = () => {
-//  window.location.href = '#img2'
-// }
+btn2.onclick = () => {
+    window.location.href = '#img2'
+}
 
-// btn3.onclick = () => {
-//  window.location.href = '#img3'
-// }
+btn3.onclick = () => {
+    window.location.href = '#img3'
+}
 
-// btn4.onclick = () => {
-//  window.location.href = '#img4'
-// }
+btn4.onclick = () => {
+    window.location.href = '#img4'
+}
 
 // ==========================modal================================
 
@@ -77,4 +84,7 @@ buy.onclick = () => {
 close.onclick = () => {
     modal.classList.remove('openModal')
 }
+
+
+// =====================================================
 
