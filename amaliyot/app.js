@@ -88,3 +88,8 @@ close.onclick = () => {
 
 // =====================================================
 
+const phoneBox = document.querySelector('.phone-box')
+
+phone.onclick = () => {
+    window.location.href = 'phone.html'
+}
