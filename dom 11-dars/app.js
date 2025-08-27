@@ -8,7 +8,7 @@
 //</tr>
 
 
-const name = document.getElementById('name')
+const ism = document.getElementById('ism')
 // console.log(name);
 const age = document.getElementById('age')
 // console.log(age);
@@ -20,17 +20,61 @@ const count = document.getElementById('count')
 // console.log(count);
 const title = document.getElementById('title')
 // console.log(title);
+const form = document.getElementById('form')
+
+const upName = document.getElementById('up-name')
+
+const upAge = document.getElementById('up-age')
+
+const upEmail = document.getElementById('up-email')
+
+const upData = document.getElementById('up-data')
 
 //delete
 const deleteUser = (id) => {
     //console.log('user.id', id)
-    fetch(`http://49.12.215.35:4002/users/${id}`,{method:'DELETE'})
+    fetch(`http://49.12.215.35:4002/users/${id}`, { method: 'DELETE' })
         .then((res) => res.json())
         .then((data) => {
             console.log(data);
             getUser()
-            alert(data.message)
+            getNotify(data.message)
         })
+}
+
+const modalContainer = document.querySelector('.modalContainer')
+const closeicon = document.getElementById('closeicon')
+modalContainer.classList.add('closemodal')
+
+closeicon.onclick = () => {
+    modalContainer.classList.add('closemodal')
+
+}
+
+updataUserFunction = (user) => {
+    upName.value = user.name
+    upAge.value = user.age
+    upEmail.value = user.email
+    upData.onclick = () => {
+    let updataUser = {
+        name: upName.value,
+        age: upAge.value,
+        email: upEmail.value,
+     }
+     console.log(updataUser);
+    
+     fetch(`http://49.12.215.35:4002/users/${user.id}`,{
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(updataUser)
+     }).then((res) => res.json())
+     .then((data) => {
+        getNotify(data.message)
+        getUser()
+     })
+}
 }
 
 function getUser() {
@@ -58,9 +102,14 @@ function getUser() {
                 td6.textContent = 'delete'
 
                 //deleta
-                td6.addEventListener('click',() => {
+                td6.addEventListener('click', () => {
                     deleteUser(item.id)
                 })
+
+                td5.onclick = () => {
+                    modalContainer.classList.remove('closemodal')
+                    updataUserFunction(item)
+                }
 
                 trow.append(td1)
                 trow.append(td2)
@@ -73,4 +122,52 @@ function getUser() {
             })
         })
 }
- getUser()
+
+function getNotify(message) {
+    Toastify({
+        text: message,
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        onClick: function () { } // Callback after click
+    }).showToast();
+}
+
+
+
+form.onsubmit = (e) => {
+    e.preventDefault()
+    const newUser = {
+        name: ism.value,
+        age: age.value,
+        email: email.value,
+    }
+
+    fetch('http://49.12.215.35:4002/users', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newUser)
+    }).then((res) => res.json())
+        .then((data) => {
+            console.log(data)
+            getUser()
+            getNotify(data.message)
+            ism.value = ''
+            age.value = ''
+            email.value = ''
+        })
+}
+
+getUser()
+
+
+

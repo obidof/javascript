@@ -6,21 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </head>
 
 <body>
-    <h1>http://49.12.215.35:4002/users</h1>
+    <h1 class="http">http://49.12.215.35:4002/users</h1>
     <div class="container">
         <div class="title">
             <h2 id="title">malumot</h2>
             <h2 id="count">12</h2>
         </div>
 
-        <form>
-            <input id="name" type="text" placeholder="name">
-            <input id="age" type="text" placeholder="age">
+        <form id="form">
+            <input id="ism" type="text" placeholder="name" required>
+            <input id="age" type="text" placeholder="age" required>
             <input id="email" type="email" placeholder="email">
-            <button id="btn">create</button>
+            <button>create</button>
         </form>
 
         <table id="table" border="1">
@@ -32,9 +34,24 @@
                 <th>edit</th>
                 <th>delete</th>
             </tr>
-
         </table>
+
+        <div class="modalContainer">
+            <div class="modalcontenet">
+                <svg id="closeicon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+
+                <h1>malumotlarni yangilash</h1>
+                <input id="up-name" type="text" placeholder="name">
+                <input id="up-age" type="text" placeholder="age">
+                <input id="up-email" type="text" placeholder="email">
+                <button id="up-data">yangilash</button>
+            </div>
+        </div>
     </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./app.js"></script>
 </body>
 
