@@ -93,3 +93,9 @@ const phoneBox = document.querySelector('.phone-box')
 phone.onclick = () => {
     window.location.href = 'phone.html'
 }
+
+index.onclick = () => {
+    window.location.href = 'index.html'
+}
+
+// =====================================================

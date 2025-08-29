@@ -28,7 +28,7 @@ export const products = [
         }
     },
     {
-        name: "MacBook Air M4",
+        name: "iphone 17 air",
         child: {
             description: "Yangi M2 chip bilan ishlovchi ultrayengil noutbuk. Tez, jim va uzoq batareya hayoti bilan.",
             price: "$1299",
@@ -42,7 +42,7 @@ export const products = [
         }
     },
     {
-        name: "Asus ROG Zephyrus G14",
+        name: "samsung A56 5G",
         child: {
             description: "Gamerlar uchun kuchli noutbuk. Ryzen 9 CPU, RTX 4060 GPU va ajoyib ekran bilan.",
             price: "$1599",
@@ -56,7 +56,7 @@ export const products = [
         }
     },
     {
-        name: "AirPods Pro 4",
+        name: "samsung A35 5G",
         child: {
             description: "Apple’dan shovqinni bostiruvchi simsiz quloqchinlar. Spatial Audio va Adaptive Transparency bilan.",
             price: "$249",
@@ -70,7 +70,7 @@ export const products = [
         }
     },
     {
-        name: "apple airpods max 2",
+        name: "iphone 17 pro max",
         child: {
             description: "Jahon darajasidagi shovqinni bostiruvchi quloqchin. Komfort va yuqori audio sifati bilan.",
             price: "$399",
@@ -84,7 +84,7 @@ export const products = [
         }
     },
     {
-        name: "iPad Pro M4",
+        name: "Xiomi 15 ultra",
         child: {
             description: "M2 chip bilan kelgan kuchli planshet. Apple Pencil 2 va Magic Keyboard bilan mos.",
             price: "$999",
@@ -98,11 +98,11 @@ export const products = [
         }
     },
     {
-        name: "K70 core rgb gaming keyboard",
+        name: "honor 400 lite",
         child: {
             description: "ekstrimal gaming keyboard ",
             price: "$449",
-            img: "amaliyot/image/image copy 7.png",
+            img: "amaliyot/image/image copy 12.png",
             comments: [
                 "web developerlar uchun ideal",
                 "kalvishlari juda yumshoq va qulay",

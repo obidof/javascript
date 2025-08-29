@@ -33,6 +33,8 @@ let buy = document.querySelector('.buy')
 let modal = document.querySelector('.modal')
 let close = document.getElementById('close')
 
+
+
 buy.onclick = () => {
     modal.classList.add('openModal')
 }
@@ -44,12 +46,12 @@ close.onclick = () => {
 
 products.map((item)=>{
     const list = document.createElement('li')
-
+    list.classList.add('smartfonlar')
     list.textContent = item.name
 
     list.onclick = () =>{
         console.log(item)
     }
-
+    
     menu.append(list)
 })
