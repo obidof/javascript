@@ -9,7 +9,7 @@ icon.onclick = () => {
 }
 
 function getVideos(search = 'nature', pagesize = 20) {
-    fetch(`https://api.pexels.com/videos/search?query=${search}&per_page=${pagesize}`,{
+    fetch(`https://api.pexels.com/videos/search?query=${search}&per_page=${pagesize}`, {
         method: 'GET',
         headers: {
             Authorization: apiKey
@@ -17,7 +17,7 @@ function getVideos(search = 'nature', pagesize = 20) {
     }).then((res) => res.json())
         .then((data) => {
             let videolink = data.videos
-
+            vid.innerHTML = ''
             console.log(videolink)
             videolink.map((item) => {
 
@@ -37,6 +37,60 @@ function getVideos(search = 'nature', pagesize = 20) {
 getVideos()
 
 
+let card = [
+    {
+        id: 1,
+        text: "bmw"
+    },
+    {
+        id: 2,
+        text: "animals"
+    },
+    {
+        id: 3,
+        text: "mountain"
+    },
+    {
+        id: 4,
+        text: "fruit"
+    },
+    {
+        id: 5,
+        text: "car"
+    },
+    {
+        id: 6,
+        text: "flowers"
+    },
+    {
+        id: 7,
+        text: "porsche"
+    },
+    {
+        id: 8,
+        text: "8k wallpaper"
+    },
+    {
+        id: 9,
+        text: "mercedes-benz"
+    },
+    {
+        id: 10,
+        text: "nature"
+    },
 
+]
+
+
+card.map((item) => {
+    const hash = document.createElement("button")
+    hash.textContent = item.text
+
+    hash.onclick = () => {
+        getVideos(item.text)
+    }
+
+    hashtag.append(hash)
+})
 
 

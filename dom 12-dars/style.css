@@ -10,7 +10,7 @@ body {
 }
 
 
-img{
+img {
     width: 200px;
 }
 
@@ -47,7 +47,7 @@ nav input {
 
 }
 
-a{
+a {
     margin-left: -200px;
     font-size: 26px;
     text-decoration: none;
@@ -76,7 +76,7 @@ a{
 .icon {
     font-size: 30px;
     position: absolute;
-    right: 26%;
+    right: 23%;
     padding: 3.5px;
 }
 
@@ -84,7 +84,7 @@ a{
     margin-top: 30px;
 }
 
-#hashtag button{
+#hashtag button {
     background-color: rgba(0, 0, 0, 0.2);
     padding: 10px;
     border-radius: 8px;
@@ -99,22 +99,27 @@ a{
 }
 
 
-#hashtag{
+#hashtag {
     display: flex;
 }
 
 #hashtag button:hover {
     transform: scale(1.05);
-    
+
 }
 
-.images p{
+.images p {
     text-align: center;
+    margin: 0 auto;
     font-size: 36px;
+    width: 1830px;
 }
 
-.input{
+
+.input {
     border: none;
     border: 1px solid black;
     border-radius: 10px;
+    margin-left: -6%;
 }
+

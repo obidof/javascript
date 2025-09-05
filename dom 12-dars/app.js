@@ -49,7 +49,7 @@ let card = [
     },
     {
         id: 9,
-        text: "desktop wallpaper"
+        text: "mercedes-benz"
     },
     {
         id: 10,
@@ -69,6 +69,14 @@ card.map((item) => {
 
     hashtag.append(hash)
 })
+
+window.addEventListener('keydown', (e) => {
+    let mykey = e.key
+    if(mykey == 'Enter') {
+        getImages(input.value)
+    }
+})
+
 
 
 
@@ -94,7 +102,7 @@ function getImages(search = 'bmw', pagesize = 40) {
                 images.append(htmlImg)
             })
 
-
+            input.value = ''
 
         })
         .catch((err) => console.error('Xatolik', err))
