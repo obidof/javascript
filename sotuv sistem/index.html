@@ -16,10 +16,11 @@
         <nav>
             <img src="./image/68bebed7d83489.42221881Processed.png " alt=""></h1>
             <div class="hreflar">
-                <a href="#">Bosh sahifa</a>
-                <a href="#">Savdo</a>
-                <a href="#">Ombor</a>
-                <a href="#">Daromad</a>
+                <a href="index.html">Bosh sahifa</a>
+                <a href="Savdo.html">Savdo</a>
+                <a href="Ombor.html">Ombor</a>
+                <a href="Daromad.html">Daromad</a>
+                <a id="profileLink" href="login.html"><ion-icon style="font-size: 50px;" name="person-circle-sharp"></ion-icon></a>
             </div>
         </nav>
 
@@ -77,83 +78,81 @@
             <h1>Hisobot</h1>
         </div>
 
-        <script>
-            var xValues = ["oyoq kiyimlar", "shimlar", "koylakalar", "kitellar", "sviterlar", "jenferlar"];
-            var yValues = [55, 49, 44, 24, 15, 10];
-            var barColors = [
-                "#b91d47",
-                "#00aba9",
-                "#2b5797",
-                "#e8c3b9",
-                "#1e7145",
-                "white"
-            ];
-
-            new Chart("myChart", {
-                type: "pie",
-                data: {
-                    labels: xValues,
-                    datasets: [{
-                        backgroundColor: barColors,
-                        data: yValues
-                    }]
-                },
-                options: {
-                    title: {
-                        display: true,
-                        text: "World Wide Wine Production 2018"
-                    }
-                }
-            });
-        </script>
-
         <div class="brand">
             <h1>Brand</h1>
             <div class="cardlar">
-                <img src="https://www.logomaker.com/api/main/ph/zjHl2lgaccgaujjsPkO66iyq4bXE...VMWx0CclXcEM20e40woz2J46bYitag2LwtDpQ5J0kNaHYJ0yHF2R9xM2Bds9j6MMIlLXHdomHVGCrhDFjB3JAKSR6fd6x83yrcyhZBI4B6QDA==" alt="">
-                <img src="https://www.logomaker.com/api/main/ph/zjHl2lgaccgaujjsPkO66iyq4afA7EYNzUKijmM8fHMNqk05...2Rkxqdm8Ot4bkJCsAZe7FBGMpMwnngiBY0chRtk9j2FPoJVDSE8k3tAWqlZTGZsLU2WXKuRr00...zLM0g5RC4Q==" alt="">
-                <img class="png" src="https://www.logomaker.com/api/main/ph/zjHl2lgaccgaujjsPkO61zv30KPCuksWzBPE3j9qYzJB8gZ602RyxKdmiYBAPEFRvwYG9moZJJl...1XU...XMBL2wwgoWbMfN5OWnl7ySkHVu4OGw=="" alt="">
+                <img src="https://www.logomaker.com/api/main/ph/zjHl2lgaccgaujjsPkO66iyq4bXE...VMWx0CclXcEM20e40woz2J46bYitag2LwtDpQ5J0kNaHYJ0yHF2R9xM2Bds9j6MMIlLXHdomHVGCrhDFjB3JAKSR6fd6x83yrcyhZBI4B6QDA=="
+                    alt="">
+                <img src="https://www.logomaker.com/api/main/ph/zjHl2lgaccgaujjsPkO66iyq4afA7EYNzUKijmM8fHMNqk05...2Rkxqdm8Ot4bkJCsAZe7FBGMpMwnngiBY0chRtk9j2FPoJVDSE8k3tAWqlZTGZsLU2WXKuRr00...zLM0g5RC4Q=="
+                    alt="">
+                <img class="png"
+                    src="https://www.logomaker.com/api/main/ph/zjHl2lgaccgaujjsPkO61zv30KPCuksWzBPE3j9qYzJB8gZ602RyxKdmiYBAPEFRvwYG9moZJJl...1XU...XMBL2wwgoWbMfN5OWnl7ySkHVu4OGw==" alt="">
             </div>
         </div>
-
-        <!-- ============================================ o'tish taqiqlanadi  ============================================================= -->
-
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-        <script src="./app.js"></script>
-
-
-
         <script>
-            let slideIndex = 1;
-            showSlides(slideIndex);
+            var xValues = [" oyoq kiyimlar", "shimlar", "koylakalar", "kitellar", "sviterlar", "jenferlar"]; var
+                yValues = [55, 49, 44, 24, 15, 10]; var barColors = ["#b91d47", "#00aba9", "#2b5797", "#e8c3b9"
+                    , "#1e7145", "white"]; new Chart("myChart", {
+                        type: "pie", data: {
+                            labels: xValues, datasets: [{
+                                backgroundColor: barColors, data: yValues
+                            }]
+                        }, options: {
+                            title: {
+                                display: true,
+                                text: "World Wide Wine Production 2018"
+                            }
+                        }
+                    }); </script>
 
-            // Next/previous controls
-            function plusSlides(n) {
-                showSlides(slideIndex += n);
-            }
 
-            // Thumbnail image controls
-            function currentSlide(n) {
-                showSlides(slideIndex = n);
-            }
 
-            function showSlides(n) {
-                let i;
-                let slides = document.getElementsByClassName("mySlides");
-                let dots = document.getElementsByClassName("dot");
-                if (n > slides.length) { slideIndex = 1 }
-                if (n < 1) { slideIndex = slides.length }
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                }
-                slides[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].className += " active";
-            }   
-        </script>
+
+                <!-- ============================================ o'tish taqiqlanadi  ============================================================= -->
+
+                <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+                <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+                <script src="./app.js"></script>
+
+
+
+                <script>
+                    let slideIndex = 1;
+                    showSlides(slideIndex);
+
+                    // Next/previous controls
+                    function plusSlides(n) {
+                        showSlides(slideIndex += n);
+                    }
+
+                    // Thumbnail image controls
+                    function currentSlide(n) {
+                        showSlides(slideIndex = n);
+                    }
+
+                    function showSlides(n) {
+                        let i;
+                        let slides = document.getElementsByClassName("mySlides");
+                        let dots = document.getElementsByClassName("dot");
+                        if (n > slides.length) { slideIndex = 1 }
+                        if (n < 1) { slideIndex = slides.length }
+                        for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";
+                        }
+                        for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" active", "");
+                        }
+                        slides[slideIndex - 1].style.display = "block";
+                        dots[slideIndex - 1].className += " active";
+                    }
+
+                    let profileLink = document.getElementById('profileLink')
+                    const isLoggedIn = localStorage.getItem("password");
+
+                    if (profileLink) {
+                        profileLink.setAttribute("href", isLoggedIn ? "profil.html" : "register.html");
+                    }
+                </script>
 </body>
 
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./ombor.css">
+</head>
+
+<body>
+    <nav>
+        <img src="./image/68bebed7d83489.42221881Processed.png " alt=""></h1>
+        <div class="hreflar">
+            <a href="index.html">Bosh sahifa</a>
+            <a href="Savdo.html">Savdo</a>
+            <a href="Ombor.html">Ombor</a>
+            <a href="Daromad.html">Daromad</a>
+            <a id="profileLink" href="login.html"><ion-icon style="font-size: 50px;"
+                    name="person-circle-sharp"></ion-icon></a>
+
+        </div>
+    </nav>
+    <script>
+        let profileLink = document.getElementById('profileLink')
+        const isLoggedIn = localStorage.getItem("password");
+
+        if (profileLink) {
+            profileLink.setAttribute("href", isLoggedIn ? "profil.html" : "register.html");
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

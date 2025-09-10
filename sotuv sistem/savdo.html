@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./savdo.css">
+</head>
+
+<body>
+    <nav>
+        <img src="./image/68bebed7d83489.42221881Processed.png " alt=""></h1>
+        <div class="hreflar">
+            <a href="index.html">Bosh sahifa</a>
+            <a href="Savdo.html">Savdo</a>
+            <a href="Ombor.html">Ombor</a>
+            <a href="Daromad.html">Daromad</a>
+             <a id="profileLink" href="login.html"><ion-icon style="font-size: 50px;" name="person-circle-sharp"></ion-icon></a>
+
+        </div>
+    </nav>
+
+    <div class="btnBox">
+        <div class="btnCard1">
+            <button class="btn1">SOTILDI</button>
+            <p>ushbu sotildi tugmasini bossangiz sizga sotilgan mahsulotlar royhati va hisobi ko'rinadi bunda siz
+                hisob-kitobda adashmaysiz ishingiz tez va oson bitadi</p>
+            <div class="modal1">
+                <ion-icon class="exit" name="close-circle-sharp"></ion-icon>
+            </div>
+        </div>
+        <div class="btnCard2">
+            <button class="btn2">QAYTIB KELDI</button>
+            <p>ushbu qaytib keldi tugmasini bossangiz sizga qaytib kelgan mahsulotlar royhati va hisob ko'rinadi bunda
+                siz hisob-kitobda va sizda qanday tovarlar qaytib keldi shularni hammasini bilib turasiz</p>
+
+            <div class="modal2">
+                <ion-icon class="exit1" name="close-circle-sharp"></ion-icon>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        const modal1 = document.querySelector(".modal1")
+        const modal2 = document.querySelector(".modal2")
+        const btn1 = document.querySelector(".btn1")
+        const btn2 = document.querySelector(".btn2")
+        const exit = document.querySelector(".exit")
+        const exit1 = document.querySelector(".exit1")
+
+        btn1.onclick = () => {
+            modal1.style.display = 'block'
+        }
+        exit.onclick = () => {
+            modal1.style.display = 'none'
+        }
+
+
+        btn2.onclick = () => {
+            modal2.style.display = 'block'
+        }
+        exit1.onclick = () => {
+            modal2.style.display = 'none'
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="rasm/cinema tv copy.png">
+  <title>Profil - Cinema TV</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1f1f1f;
+      padding: 10px 20px;
+      font-size: 1.5em;
+    }
+
+    nav a {
+      color: white;
+      font-size: 2em;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 70px auto;
+      padding: 30px;
+      background-color: #1f1f1f;
+      box-shadow: 0 0 30px rgb(243, 2, 2);
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.5s;
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #454545;
+      margin-bottom: 10px;
+    }
+
+    .input-img {
+      display: none;
+    }
+
+    .edit-icon {
+      cursor: pointer;
+      color: #ccc;
+      margin-left: 10px;
+      font-size: 18px;
+    }
+
+    .info {
+      margin: 10px 0;
+    }
+
+    .info input {
+      padding: 5px 10px;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      margin-top: 5px;
+    }
+
+    .info ion-icon{
+      padding: 4px;
+      transition: 0.1s;
+      border-radius: 3px;
+    }
+
+    .info ion-icon:hover{
+      box-shadow: 0 0 10px #e50914;
+      background-color: #cb0b15;
+    }
+
+    #saveBtn {
+      margin-top: 20px;
+      background-color: #e50914;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      display: none;
+      transition: 0.1s;
+    }
+
+    #saveBtn:hover {
+      background-color: #cb0b15;
+      box-shadow: 0 0 50px rgb(243, 2, 2);
+    }
+
+    #logoutBtn {
+      margin-top: 20px;
+      background-color: #555;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.1s;
+
+    }
+
+    #logoutBtn:hover {
+      background-color: #e50914;
+      box-shadow: 0 0 20px red;
+    }
+
+    .close{
+      position: absolute;
+      left: 20px;
+      top: 35px;
+      font-size: 30px;
+      width: 36px;
+      height: 32px;
+      border-radius: 6px;
+      padding: 4px;
+    }
+    .close:hover{
+      background-color: rgba(99, 99, 99, 00.5);
+    }
+
+    .notes{
+      margin-left: 908px;
+      margin-top: 70px;
+      transform: translateY(-100px);
+      transition: 0.5s;
+    }
+    .openNotes{
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+    <div class="close" id="close">
+      <a href="index.html" style="color: white;"><ion-icon name="chevron-back-outline"></ion-icon></a>
+    </div>
+
+    <div class="notes" id="notes">
+      <p>Profil Yangilandi <ion-icon name="checkmark"></ion-icon></p>
+    </div>
+
+  <div class="container">
+    <label for="uploadImg">
+      <img src="./rasm/user-icon-on-transparent-background-free-png.webp" alt="Foydalanuvchi rasmi" id="profileImage" class="profile-img" />
+    </label>
+    <input type="file" accept="image/*" id="uploadImg" class="input-img" />
+
+    <div class="info">
+      <p id="nameDisplay">Ismingiz <span class="edit-icon" onclick="editField('name')"><ion-icon name="pencil-sharp"></ion-icon></span></p>
+      <input type="text" id="nameInput" style="display:none; margin: 0 auto;" />
+    </div>
+
+    <div class="info">
+      <p id="emailDisplay">Email manzil <span class="edit-icon" onclick="editField('email')"><ion-icon name="pencil-sharp"></ion-icon></span></p>
+      <input type="text" id="emailInput" style="display:none; margin: 0 auto;" />
+    </div>
+
+    <button id="saveBtn" onclick="saveChanges()">Saqlash</button>
+    <button id="logoutBtn" onclick="logout()">Chiqish</button>
+  </div>
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    // Ma'lumotlarni ko'rsatish
+    window.onload = () => {
+      const name = localStorage.getItem("username") || "Ismingiz";
+      const email = localStorage.getItem("email") || "Email manzil";
+      const img = localStorage.getItem("profileImage");
+
+      document.getElementById("nameDisplay").childNodes[0].textContent = name + " ";
+      document.getElementById("emailDisplay").childNodes[0].textContent = email + " ";
+
+      if (img) document.getElementById("profileImage").src = img;
+    };
+
+    // Rasm yuklash
+    document.getElementById("uploadImg").addEventListener("change", function (e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const imageData = e.target.result;
+        document.getElementById("profileImage").src = imageData;
+        localStorage.setItem("profileImage", imageData);
+      };
+      reader.readAsDataURL(file);
+    });
+
+    // Tahrirlash
+    function editField(field) {
+      const display = document.getElementById(field + "Display");
+      const input = document.getElementById(field + "Input");
+      const value = display.childNodes[0].textContent.trim();
+
+      input.value = value;
+      display.style.display = "none";
+      input.style.display = "block";
+      document.getElementById("saveBtn").style.display = "inline-block";
+    }
+
+    // Saqlash
+    function saveChanges() {
+      const name = document.getElementById("nameInput").value;
+      const email = document.getElementById("emailInput").value;
+
+      if (name) {
+        localStorage.setItem("username", name);
+        document.getElementById("nameDisplay").childNodes[0].textContent = name + " ";
+      }
+
+      if (email) {
+        localStorage.setItem("email", email);
+        document.getElementById("emailDisplay").childNodes[0].textContent = email + " ";
+      }
+
+      document.getElementById("nameInput").style.display = "none";
+      document.getElementById("emailInput").style.display = "none";
+      document.getElementById("nameDisplay").style.display = "block";
+      document.getElementById("emailDisplay").style.display = "block";
+      document.getElementById("saveBtn").style.display = "none";
+    }
+
+    // Chiqish
+    function logout() {
+      localStorage.removeItem("username");
+      localStorage.removeItem("email");
+      localStorage.removeItem("profileImage");
+      localStorage.removeItem("password");
+      window.location.href = "register.html";
+    }
+
+    // saveBtn.onclick = () => {
+    //   notes.classlist.add('openNotes')
+    // }
+  </script>
+</body>
+
+</html>

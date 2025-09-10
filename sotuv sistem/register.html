@@ -1,0 +1,210 @@
+<html lang="uz">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="rasm/cinema tv copy.png">
+  <title>Ro'yhatdan o'tish - Cinema TV</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      background-color: #121212;
+    }
+
+    nav {
+      display: flex;
+      gap: 650px;
+      align-items: center;
+      background-color: #1f1f1f;
+      width: 100%;
+      height: 84px;
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    nav ion-icon {
+      font-size: 50px;
+      color: white;
+    }
+
+    nav ion-icon:hover {
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.23);
+    }
+
+    .register-container {
+      max-width: 400px;
+      margin: 50px auto;
+      background-color: #1f1f1f;
+      padding: 30px;
+      border-radius: 10px;
+      color: white;
+    }
+
+    .register-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .register-container input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+      font-size: 1em;
+    }
+
+    .register-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #e50914;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1em;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .register-container button:hover {
+      background-color: #b00710;
+    }
+
+    .login-link {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 0.9em;
+    }
+
+    .login-link a {
+      color: #e50914;
+      text-decoration: none;
+    }
+
+    #registerForm {
+      position: relative;
+    }
+
+    #eye {
+      position: absolute;
+      top: 190px;
+      left: 309px;
+      width: 25px;
+      height: 25px;
+      color: black;
+    }
+
+    .error {
+      display: flex;
+      text-align: center;
+      align-items: center;
+      margin: 0 auto;
+      gap: 5px;
+      width: 180px;
+      background-color: #ff4444;
+      color: white;
+      padding: 10px;
+      margin-top: 35px;
+      margin-bottom: 15px;
+      text-align: center;
+      border-radius: 5px;
+      transform: translateY(-1100px);
+      transition: 0.5s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <header style="margin-left: 20px;"><a href="index.html">Cinema TV</a></header>
+  </nav>
+
+  <div id="errorBox" class="error"><span><ion-icon name="alert-circle" style="margin-left: 7px;"></ion-icon></span>Parol
+    mos emas!</div>
+
+  <div class="register-container">
+    <h2>Ro'yhatdan o'tish</h2>
+    <form id="registerForm">
+      <input type="text" id="regName" placeholder="Ismingiz" required>
+      <input type="email" id="regEmail" placeholder="Email manzil" required>
+      <input type="password" id="regPassword" placeholder="Parol" required>
+      <input type="password" id="confirmPassword" placeholder="Parolni tasdiqlang" required>
+      <span id="icon"><img src="./rasm/password-eye.png"
+          id="eye"></ion-icon></span>
+      <button type="submit">Ro'yhatdan o'tish</button>
+    </form>
+    <div class="login-link">
+      Hisobingiz bormi? <a href="login.html">Kirish</a>
+    </div>
+  </div>
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    const registerForm = document.getElementById('registerForm');
+
+    registerForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('regName').value;
+      const email = document.getElementById('regEmail').value;
+      const password = document.getElementById('regPassword').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+
+      if (password !== confirmPassword) {
+        setTimeout(() => {
+          errorBox.style.transform = 'translateY(-1100px)';
+        }, 4000)
+        errorBox.style.transform = 'translateY(0px)';
+        return;
+      }
+
+      // Ma'lumotlarni saqlash
+      localStorage.setItem('username', name);
+      localStorage.setItem('email', email);
+      localStorage.setItem('password', password);
+
+      // Kirish sahifasiga yo‘naltirish
+      window.location.href = 'login.html';
+    });
+
+    let eye = document.getElementById('eye')
+
+    let Toggle = false
+    eye.onclick = () => {
+      Toggle = !Toggle
+
+      if (Toggle) {
+        confirmPassword.type = 'text'
+        // icon.innerHTML = '<ion-icon name="eye-off-outline" id="eye"></ion-icon>'
+      }
+      else {
+        confirmPassword.type = 'password'
+        // icon.innerHTML = '<ion-icon name="eye-outline" id="eye"></ion-icon>'
+      }
+      console.log(Toggle)
+    }
+
+  </script>
+
+</body>
+
+</html>
