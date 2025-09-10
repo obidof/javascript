@@ -1,40 +1,51 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 body {
-    margin: 20px 30px;
+  margin: 20px 30px;
 }
+
 
 nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  position: fixed;
+  z-index: 1000;
+  background-color: transparent;
+  backdrop-filter: blur(60px);
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding: 10px;
 }
 
-nav h1 {
-    font-size: 38px;
-    margin: 20px 30px;
+nav img {
+  width: 200px;
 }
 
 .hreflar {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
 nav .hreflar a {
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 /* ============================ navbar tugadi ================================== */
-
+.carusel {
+  padding-top: 100px;
+}
 
 .slideshow-container {
   max-width: 1700px;
@@ -44,18 +55,19 @@ nav .hreflar a {
 
 /* Hide the images by default */
 .mySlides {
-    display: none;
+  display: none;
 }
 
-.mySlides img{
-    height: 750px;
-    border-radius: 8px;
+.mySlides img {
+  height: 750px;
+  border-radius: 8px;
 }
 
 /* Next & previous buttons */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
   top: 50%;
   width: auto;
   margin-top: -22px;
@@ -70,13 +82,14 @@ nav .hreflar a {
 
 /* Position the "next button" to the right */
 .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+  right: 0;
+  border-radius: 3px 0 0 3px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Caption text */
@@ -111,19 +124,81 @@ nav .hreflar a {
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
 
 /* Fading animation */
 .fade {
-    animation-name: fade;
+  animation-name: fade;
   animation-duration: 1.5s;
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
 /* ===================================================================== */
+
+
+.chart {
+  text-align: center;
+  color: balck;
+  font-size: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  margin-top: 50px;
+  padding: 10px;
+  width: 92%;
+}
+
+.chart h1 {
+  margin-top: 10px;
+}
+
+.chart canvas {
+  margin: 0 auto;
+}
+
+.brand {
+  border: 2px solid black;
+  padding-right: 10px;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.cardlar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.brand h1 {
+  text-align: center;
+  font-size: 38px;
+  padding-bottom: 20px;
+}
+
+.cardlar img {
+  border-radius: 10px;
+  transition: 1s;
+  padding-bottom: 20px;
+
+}
+
+.cardlar img:hover {
+  transform: scale(1.03);
+}
+
+.cardlar .png {
+  background-color: #C1C2C6;
+  width: 500px;
+  height: 445px;
+}

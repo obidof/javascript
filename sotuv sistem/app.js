@@ -79,4 +79,3 @@ minus.onclick = () => {
         imgfunction()
     }
 }
-
