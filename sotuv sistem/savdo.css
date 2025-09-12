@@ -152,3 +152,19 @@ nav .hreflar a {
     margin-top: 5px;
     font-size: 30px;
 }
+
+.sotuv-h1 {
+    text-align: center;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+  border:1px solid black;
+  margin: 0 auto;
+}
+
+table tr td input {
+    width: 100%;
+
+}

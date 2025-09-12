@@ -13,7 +13,7 @@
             font-family: sans-serif;
         }
 
-        body{
+        body {
             background-color: #444;
         }
 
@@ -122,7 +122,6 @@
     <div class="container">
         <h2>Hisobga kirish</h2>
         <form id="loginForm">
-            <input type="text" id="loginName" placeholder="Ismingiz" required>
             <input type="email" id="loginEmail" placeholder="Email" required>
             <input type="password" id="loginPassword" placeholder="Parol" required>
             <button type="submit">Kirish</button>
@@ -139,32 +138,44 @@
     <!-- Login Logika -->
     <script>
         const loginForm = document.getElementById('loginForm');
-        const errorBox = document.getElementById('errorBox');
+
         const close = document.getElementById('close');
 
-        loginForm.addEventListener('submit', function (e) {
-            e.preventDefault();
 
-            const name = document.getElementById('loginName').value;
+
+        loginForm.onsubmit = (e) => {
+            e.preventDefault()
             const email = document.getElementById('loginEmail').value;
             const password = document.getElementById('loginPassword').value;
 
-            const savedPassword = localStorage.getItem('password');
+            let obj = { email, password }
+            const login = async (obj) => {
+                try {
 
-            if (password !== savedPassword) {
-                setTimeout(() => {
-                    errorBox.style.transform = 'translateY(-1100px)';
-                }, 4000)
-                errorBox.style.transform = 'translateY(0px)';
-                return;
+                    const response = await fetch('http://localhost:5000/api/auth/login', {
+                        method: 'POST',
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(obj)
+                    }).then(res => res.json()).then(data => data)
+
+                    console.log(response, 'login')
+                    localStorage.setItem('token',response.token)
+                    localStorage.setItem('role',response.role)
+
+                    window.location.href = './profil.html'
+
+                } catch (err) {
+                    console.log(err, "Xatolik")
+                }
+
+
             }
 
-            // Saqlash
-            localStorage.setItem('username', name);
-            localStorage.setItem('email', email);
 
-            window.location.href = 'profil.html';
-        });
+            login(obj)
+        }
     </script>
 
 </body>
