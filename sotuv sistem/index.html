@@ -16,11 +16,11 @@
         <nav>
             <img src="./image/68bebed7d83489.42221881Processed.png " alt=""></h1>
             <div class="hreflar">
-                <a href="index.html">Bosh sahifa</a>
-                <a href="Savdo.html">Savdo</a>
-                <a href="Ombor.html">Ombor</a>
-                <a href="Daromad.html">Daromad</a>
-                <a id="profileLink" href="login.html"><ion-icon style="font-size: 50px;" name="person-circle-sharp"></ion-icon></a>
+                <a href="./index.html">Bosh sahifa</a>
+                <a href="./savdo/savdo.html">Savdo</a>
+                <a href="./ombor/ombor.html">Ombor</a>
+                <a href="./daromad/daromad.html">Daromad</a>
+                <a id="profileLink" href=""><ion-icon id="profilIcon" style="font-size: 50px; color: black;" name="person-circle-sharp"></ion-icon></a>
             </div>
         </nav>
 
@@ -150,7 +150,7 @@
                     const isLoggedIn = localStorage.getItem("password");
 
                     if (profileLink) {
-                        profileLink.setAttribute("href", isLoggedIn ? "profil.html" : "register.html");
+                        profileLink.setAttribute("href", isLoggedIn ? "profil.html" : "./login/login.html");
                     }
                 </script>
 </body>

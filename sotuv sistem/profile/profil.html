@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="rasm/cinema tv copy.png">
+  <link rel="stylesheet" href="../profile/profil.css">
+  <title>Profil - Trade</title>
+
+</head>
+
+<body>
+  <div class="close" id="close">
+    <a href="../index.html" style="color: white;"><ion-icon name="chevron-back-outline"></ion-icon></a>
+  </div>
+
+  <div class="notes" id="notes">
+    <p>Profil Yangilandi <ion-icon name="checkmark"></ion-icon></p>
+  </div>
+
+  <div class="container">
+    <label for="uploadImg">
+      <img src="image/image.png" alt="Foydalanuvchi rasmi" id="profileImage" class="profile-img" />
+    </label>
+    <input type="file" accept="image/*" id="uploadImg" class="input-img" />
+
+    <div class="info">
+      <p id="nameDisplay">Ismingiz: <span id="backendname"></span> <span class="edit-icon"
+          onclick="editField('name')"><ion-icon name="pencil-sharp"></ion-icon></span></p>
+      <input type="text" id="nameInput" style="display:none; margin: 0 auto;" />
+    </div>
+
+    <div class="info">
+      <p id="emailDisplay">Email manzil: <span id="backemail"></span> <span class="edit-icon"
+          onclick="editField('email')"><ion-icon name="pencil-sharp"></ion-icon></span></p>
+      <input type="text" id="emailInput" style="display:none; margin: 0 auto;" />
+    </div>
+
+    <button id="saveBtn" onclick="saveChanges()">Saqlash</button>
+    <button id="logoutBtn" onclick="logout()">Chiqish</button>
+  </div>
+
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="../profile/profil.js"></script>
+</body>
+
+</html>

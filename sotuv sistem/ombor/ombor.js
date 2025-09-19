@@ -14,3 +14,10 @@ add.onclick = () => {
         }
     )
 }
+
+let profileLink = document.getElementById('profileLink')
+const isLoggedIn = localStorage.getItem("password");
+
+if (profileLink) {
+    profileLink.setAttribute("href", isLoggedIn ? "profil.html" : "./login/login.html");
+}

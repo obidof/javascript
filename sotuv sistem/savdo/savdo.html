@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./savdo.css">
+    <link rel="stylesheet" href="../savdo/savdo.css">
 </head>
 
 <body>
     <nav>
-        <img src="./image/68bebed7d83489.42221881Processed.png " alt=""></h1>
+        <a href="index.html"><img src="../image/68bebed7d83489.42221881Processed.png" alt=""></a>
         <div class="hreflar">
-            <a href="index.html">Bosh sahifa</a>
-            <a href="Savdo.html">Savdo</a>
-            <a href="Ombor.html">Ombor</a>
-            <a href="Daromad.html">Daromad</a>
-            <a id="profileLink" href="login.html"><ion-icon style="font-size: 50px;"
+            <a href="../index.html">Bosh sahifa</a>
+            <a href="../savdo/savdo.html">Savdo</a>
+            <a href="../ombor/ombor.html">Ombor</a>
+            <a href="../daromad/daromad.html">Daromad</a>
+            <a id="profileLink" href="../login/login.html"><ion-icon style="font-size: 50px;"
                     name="person-circle-sharp"></ion-icon></a>
 
         </div>
@@ -38,7 +38,6 @@
                     <input class="savdo-int" type="text" placeholder="maxsulot soni">
                     <input class="savdo-int" type="text" placeholder="maxsulot narxi">
                     <button class="add">qo'shish</button>
-                    <button class="delete">o'chirish</button>
                 </div>
             </div>
         </div>
@@ -56,7 +55,6 @@
                     <input class="savdo-int" type="text" placeholder="maxsulot soni">
                     <input class="savdo-int" type="text" placeholder="maxsulot narxi">
                     <button class="add">qo'shish</button>
-                    <button class="delete">o'chirish</button>
                 </div>
             </div>
         </div>
@@ -64,31 +62,7 @@
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-    <script>
-        const modal1 = document.querySelector(".modal1")
-        const modal2 = document.querySelector(".modal2")
-        const btn1 = document.querySelector(".btn1")
-        const btn2 = document.querySelector(".btn2")
-        const exit = document.querySelector(".exit")
-        const exit1 = document.querySelector(".exit1")
-
-        btn1.onclick = () => {
-            modal1.style.display = 'block'
-        }
-        exit.onclick = () => {
-            modal1.style.display = 'none'
-        }
-
-
-        btn2.onclick = () => {
-            modal2.style.display = 'block'
-        }
-        exit1.onclick = () => {
-            modal2.style.display = 'none'
-        }
-
-    </script>
+    <script src="../savdo/savdo.js"></script>
 </body>
 
 </html>

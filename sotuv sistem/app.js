@@ -80,3 +80,8 @@ minus.onclick = () => {
     }
 }
 
+const profilIcon = document.getElementById('profilIcon')
+
+profilIcon.onclick = () => {
+    window.location.href('login.html')
+}
