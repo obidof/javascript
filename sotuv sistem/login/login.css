@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #444;
+    background-color: white;
 }
 
 nav {
@@ -16,26 +16,29 @@ nav {
     height: 84px;
     font-size: 2em;
     font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: #c7e9ff;
+
 }
 
 nav a {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
 nav ion-icon {
     font-size: 50px;
-    color: white;
+    color: black;
 }
 
 .container {
     max-width: 400px;
     margin: 50px auto;
-    background-color: #1f1f1f;
+    background-color: white;
     padding: 30px;
     border-radius: 10px;
-    color: white;
+    color: black;
+    box-shadow: 0 0 50px #033D62;
+
 }
 
 .container h2 {
@@ -49,12 +52,13 @@ nav ion-icon {
     margin: 10px 0;
     border-radius: 5px;
     border: none;
+    background-color: #c7e9ff;
 }
 
 .container button {
     width: 100%;
     padding: 10px;
-    background-color: #e50914;
+    background-color: #033D62;
     border: none;
     color: white;
     font-size: 1.1em;
@@ -63,17 +67,13 @@ nav ion-icon {
     border-radius: 5px;
 }
 
-.container button:hover {
-    background-color: #b00710;
-}
-
 .link {
     text-align: center;
     margin-top: 15px;
 }
 
 .link a {
-    color: #e50914;
+    color: #0d89d5;
     text-decoration: none;
 }
 
@@ -85,7 +85,7 @@ nav ion-icon {
     gap: 5px;
     width: 160px;
     background-color: #ff4444;
-    color: white;
+    color: black;
     padding: 10px;
     margin-top: 35px;
     margin-bottom: 15px;

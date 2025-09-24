@@ -6,14 +6,14 @@
     }
 
     body {
-      background-color: #121212;
+      background-color: white;
     }
 
     nav {
       display: flex;
       gap: 650px;
       align-items: center;
-      background-color: #1f1f1f;
+      background-color: #8ecef6;
       width: 100%;
       height: 84px;
       text-align: center;
@@ -31,23 +31,21 @@
       color: white;
     }
 
-    nav ion-icon:hover {
-      border-radius: 10px;
-      background-color: rgba(255, 255, 255, 0.23);
-    }
-
     .register-container {
       max-width: 400px;
       margin: 50px auto;
-      background-color: #1f1f1f;
+      background-color: white;
       padding: 30px;
       border-radius: 10px;
-      color: white;
+      color: black;
+      box-shadow: 0 0 50px #033D62;
     }
+
 
     .register-container h2 {
       text-align: center;
       margin-bottom: 20px;
+      color: black;
     }
 
     .register-container input {
@@ -57,12 +55,13 @@
       border-radius: 5px;
       border: none;
       font-size: 1em;
+      background-color: #7db9dd;
     }
 
     .register-container button {
       width: 100%;
       padding: 10px;
-      background-color: #e50914;
+      background-color: #033D62;
       color: white;
       border: none;
       border-radius: 5px;
@@ -72,10 +71,6 @@
       transition: background-color 0.3s;
     }
 
-    .register-container button:hover {
-      background-color: #b00710;
-    }
-
     .login-link {
       text-align: center;
       margin-top: 15px;
@@ -83,7 +78,7 @@
     }
 
     .login-link a {
-      color: #e50914;
+      color: #4ba8f4eb;
       text-decoration: none;
     }
 
@@ -107,7 +102,7 @@
       margin: 0 auto;
       gap: 5px;
       width: 180px;
-      background-color: #ff4444;
+      background-color: #033D62;
       color: white;
       padding: 10px;
       margin-top: 35px;

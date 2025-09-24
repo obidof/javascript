@@ -26,16 +26,16 @@
 
 
     // Ma'lumotlarni ko'rsatish
-    // window.onload = () => {
-    //   const name = localStorage.getItem("username") || "Ismingiz";
-    //   const email = localStorage.getItem("email") || "Email manzil";
-    //   const img = localStorage.getItem("profileImage");
+    window.onload = () => {
+      const name = localStorage.getItem("username") || "Ismingiz";
+      const email = localStorage.getItem("email") || "Email manzil";
+      const img = localStorage.getItem("profileImage");
 
-    //   document.getElementById("nameDisplay").childNodes[0].textContent = name + " ";
-    //   document.getElementById("emailDisplay").childNodes[0].textContent = email + " ";
+      document.getElementById("nameDisplay").childNodes[0].textContent = name + " ";
+      document.getElementById("emailDisplay").childNodes[0].textContent = email + " ";
 
-    //   if (img) document.getElementById("profileImage").src = img;
-    // };
+      if (img) document.getElementById("profileImage").src = img;
+    };
 
     // Rasm yuklash
     document.getElementById("uploadImg").addEventListener("change", function (e) {

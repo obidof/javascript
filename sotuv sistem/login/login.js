@@ -25,7 +25,7 @@ loginForm.onsubmit = (e) => {
             localStorage.setItem('token', response.token)
             localStorage.setItem('role', response.role)
 
-            window.location.href = './profil.html'
+            window.location.href = '../profile/profil.html'
 
         } catch (err) {
             console.log(err, "Xatolik")

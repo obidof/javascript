@@ -22,13 +22,18 @@
         </div>
     </nav>
 
-    <div class="savdo-box">
-        <input class="savdo-int" type="text" placeholder="maxsulot nomi">
-        <input class="savdo-int savdo-int1" type="text" placeholder="maxsulot razmeri">
-        <input class="savdo-int savdo-int2" type="text" placeholder="maxsulot soni">
-        <input class="savdo-int savdo-int3" type="text" placeholder="maxsulot narxi">
+
+    <form id="savdo-box">
+        <input class="savdo-int" type="text" placeholder="maxsulot nomi" required>
+        <input class="savdo-int savdo-int1" type="number" placeholder="maxsulot razmeri" required>
+        <input class="savdo-int savdo-int2" type="number" placeholder="maxsulot soni" required>
+        <input class="savdo-int savdo-int3" type="number" placeholder="maxsulot narxi" required>
         <button class="add">qo'shish</button>
-    </div>
+    </form>
+
+
+    <div id="product"></div>
+
     <script src="../ombor/ombor.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
