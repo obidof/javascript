@@ -91,7 +91,7 @@
       localStorage.removeItem("email");
       localStorage.removeItem("profileImage");
       localStorage.removeItem("password");
-      window.location.href = "register.html";
+      window.location.href = "../register/register.html";
     }
 
     // saveBtn.onclick = () => {

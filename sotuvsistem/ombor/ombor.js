@@ -25,45 +25,103 @@ let profileLink = document.getElementById('profileLink')
 const isLoggedIn = localStorage.getItem("password");
 
 if (profileLink) {
-    profileLink.setAttribute("href", isLoggedIn ? "profil.html" : "./login/login.html");
+    profileLink.setAttribute("href", isLoggedIn ? "profil.html" : "../login/login.html");
 }
 
+// -------------------------------------------------------------------------------------------------------
 
 const sotildifunction = (id) => {
-   
+
 
     fetch(`http://localhost:5000/api/products/${id}/sell`, {
         method: 'PUT',
         headers: {
             "Content-Type": "application/json"
         },
-        // body: JSON.stringify()
+
     }).then((res) => res.json())
         .then((data) => {
-            console.log(data)
-             getdata()
+            console.log(data.message)
+            getdata()
+
+            Toastify({
+                text: data.message,
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "center", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function () { } // Callback after click
+            }).showToast();
         })
 }
 
 
 const Qaytarildifunction = (id) => {
-    console.log(id)
-    getdata()
-
-    fetch('http://localhost:5000/api/products/:id/return', {
-        method: 'GET',
+    fetch(`http://localhost:5000/api/products/${id}/return `, {
+        method: 'PUT',
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(Qaytarildi)
-    })
+    }).then((res) => res.json())
+        .then((data) => {
+            console.log(data, 'qaytdi')
+            getdata()
+
+             Toastify({
+                text: data.message,
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "center", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function () { } // Callback after click
+            }).showToast();
+            
+        })
 
 }
 
 const deletefunction = (id) => {
-    console.log(id)
-    getdata()
+    fetch(`http://localhost:5000/api/products/${id}`, {
+        method: 'PUT',
+        headers: {
+            "Content-Type": "application/json"
+        },
+    }).then((res) => res.json())
+        .then((data) => {
+            console.log(data)
+            getdata()
+
+             Toastify({
+                text: data.message,
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "center", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function () { } // Callback after click
+            }).showToast();
+            
+        })
 }
+
+// -------------------------------------------------------------------------------------------------------
 
 function getdata() {
     fetch('http://localhost:5000/api/products', {
@@ -98,6 +156,9 @@ function getdata() {
                 Qaytarildi.textContent = 'Qaytarildi'
                 Qaytarildi.className = 'btn btn2'
                 card.append(Qaytarildi)
+                Qaytarildi.onclick = () => {
+                    Qaytarildifunction(item.id)
+                }
 
                 const dalate = document.createElement('button')
                 dalate.textContent = 'dalate'
@@ -109,13 +170,6 @@ function getdata() {
                     sotildifunction(item.id)
                 }
 
-                Qaytarildi.onclick = () => {
-                    sotildifunction(item.id)
-                }
-
-                dalate.onclick = () => {
-                    sotildifunction(item.id)
-                }
 
                 productDiv.appendChild(card);
             });

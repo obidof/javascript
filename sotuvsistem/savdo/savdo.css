@@ -171,12 +171,30 @@ nav .hreflar a {
 
 }
 
-.savdo-box table{
+.savdo-box table {
     width: 80%;
     border-collapse: collapse;
 }
 
 .savdo-box table td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.savdoBox2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.savdoBox2 table {
+    width: 80%;
+    border-collapse: collapse;
+}
+
+.savdoBox2 table td {
     border: 1px solid black;
     padding: 10px;
 }

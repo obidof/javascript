@@ -39,7 +39,6 @@ fetch('http://localhost:5000/api/products/sold', {
     .then((data) => {
         const table = document.createElement('table');
         data.forEach(item => {
-            console.log(item)
 
             const tr = document.createElement('tr');
 
@@ -48,7 +47,7 @@ fetch('http://localhost:5000/api/products/sold', {
             const tdQty = document.createElement('td'); tdQty.textContent = item.quantity;
             const tdTotal = document.createElement('td'); tdTotal.textContent = item.size;
             const tdPrice = document.createElement('td'); tdPrice.textContent = item.price + " so'm";
-            
+
 
             tr.appendChild(tdId);
             tr.appendChild(tdName);
@@ -63,5 +62,40 @@ fetch('http://localhost:5000/api/products/sold', {
 
 // ===========================================================
 
-console.log(savdoBox)
+const savdoBox2 = document.querySelector('.savdoBox2')
+
+fetch('http://localhost:5000/api/products/returned', {
+    method: 'GET',
+    headers: {
+        "Content-Type": "application/json"
+    },
+}).then((res) => res.json())
+    .then((data) => {
+        const table = document.createElement('table');
+        data.forEach(item => {
+            
+            const tr = document.createElement('tr');
+
+            const tdId = document.createElement('td'); tdId.textContent = item.id;
+            const tdName = document.createElement('td'); tdName.textContent = item.name;
+            const tdQty = document.createElement('td'); tdQty.textContent = item.quantity;
+            const tdTotal = document.createElement('td'); tdTotal.textContent = item.size;
+            const tdPrice = document.createElement('td'); tdPrice.textContent = item.price + " so'm";
+
+
+            tr.appendChild(tdId);
+            tr.appendChild(tdName);
+            tr.appendChild(tdQty);
+            tr.appendChild(tdPrice);
+            tr.appendChild(tdTotal);
+
+            table.appendChild(tr);
+  
+        });
+        
+        savdoBox2.append(table)
+    })
+
+// ===========================================================
+
 
