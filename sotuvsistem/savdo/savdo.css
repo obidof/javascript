@@ -114,6 +114,8 @@ nav .hreflar a {
     top: 100px;
     left: 60px;
     width: 1800px;
+    height: 800px;
+    overflow: auto;
     display: none;
     border-radius: 10px;
     border: 1px solid black;
@@ -128,6 +130,8 @@ nav .hreflar a {
     left: 60px;
     width: 1800px;
     height: 800px;
+    height: 800px;
+    overflow: auto;
     display: none;
     border-radius: 10px;
     border: 1px solid black;
@@ -159,8 +163,13 @@ nav .hreflar a {
 
 .sotuv-h1 {
     text-align: center;
-    margin-top: -20px;
-    margin-bottom: 20px;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    z-index: 100;
+    background-color: white;
+
+
 }
 
 .savdo-box {
@@ -168,6 +177,8 @@ nav .hreflar a {
     align-items: center;
     justify-content: center;
     gap: 20px;
+    padding-top: 100px;
+    position: relative;
 
 }
 
@@ -186,6 +197,7 @@ nav .hreflar a {
     align-items: center;
     justify-content: center;
     gap: 20px;
+    padding-top: 100px;
 
 }
 

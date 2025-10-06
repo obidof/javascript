@@ -20,10 +20,14 @@ exit1.onclick = () => {
     modal2.style.display = 'none'
 }
 
-window.addEventListener("keydown", ({ key }) => {
-    if (key == 'Enter') {
-        console.log('enter bosildi');
-    }
+window.addEventListener("keydown", (keys) => {
+    console.log((keys.ctrlKey && keys.key=='d')
+)
+  if(keys.key=='Escape'){
+    modal2.style.display = 'none'
+    modal1.style.display = 'none'
+
+  }
 })
 
 // -------------------------------- GET ---------------------
@@ -37,6 +41,7 @@ fetch('http://localhost:5000/api/products/sold', {
     },
 }).then((res) => res.json())
     .then((data) => {
+        console.log(data)
         const table = document.createElement('table');
         data.forEach(item => {
 
